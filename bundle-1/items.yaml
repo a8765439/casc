@@ -3,29 +3,24 @@ removeStrategy:
   items: NONE
 items:
 - kind: pipeline
-  name: javamaven
+  name: abcd
   concurrentBuild: true
   definition:
     cpsFlowDefinition:
       sandbox: true
       script: |
         pipeline {
-            agent {
-                label 'javamaven'
-            }
+            agent any
 
             stages {
                 stage('Hello') {
                     steps {
-                        container('javamaven'){
-                            echo 'Hello World'
-                            sh 'mvn -version'
-                        }
+                        echo 'Hello World'
                     }
                 }
             }
         }
-  description: javamaven
+  description: ''
   disabled: false
-  displayName: javamaven
+  displayName: abcd
   resumeBlocked: false
