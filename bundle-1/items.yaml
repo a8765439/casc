@@ -3,7 +3,7 @@ removeStrategy:
   items: NONE
 items:
 - kind: pipeline
-  name: abcd
+  name: abcd2
   concurrentBuild: true
   definition:
     cpsFlowDefinition:
