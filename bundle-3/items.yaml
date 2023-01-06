@@ -1,0 +1,31 @@
+removeStrategy:
+  rbac: SYNC
+  items: NONE
+items:
+- kind: pipeline
+  name: test
+  concurrentBuild: true
+  definition:
+    cpsFlowDefinition:
+      sandbox: true
+      script: |-
+        pipeline {
+            agent {
+                label 'javamaven'
+            }
+
+            stages {
+                stage('Hello') {
+                    steps {
+                        container('javamaven'){
+                            echo 'Hello World'
+                            sh 'mvn -version'
+                        }
+                    }
+                }
+            }
+        }
+  description: test
+  disabled: false
+  displayName: test
+  resumeBlocked: false
