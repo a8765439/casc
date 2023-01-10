@@ -1,0 +1,8 @@
+removeStrategy:
+  rbac: SYNC
+roles:
+- name: authenticated
+- permissions:
+  - hudson.model.Hudson.Administer
+  name: administer
+- name: anonymous
